@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>URLs</title>
+</head>
+<body>
+    <h1>Not Found</h1>
+    <p id="requested_url"></p><br>
+    <p>以下のURLのページはあるかもしれません。</p>
+    <a id="suggested_url"></a>
+</body>
+<script>
+    const requested_url = "https://www.google.com"//window.location.pathname.slice(1);
+    document.getElementById("requested_url").innerHTML = requested_url;
+    const suggested_url_elm = document.getElementById("suggested_url")
+    if (requested_url.slice(0,8) == "https://"){
+        const suggested_url = requested_url.slice(8);
+        suggested_url_elm.innerHTML = suggested_url;
+        suggested_url_elm.href = location.protocol + "//" + location.hostname + "/" +  suggested_url;
+    }else if(requested_url.slice(0,7) == "http://"){
+        const suggested_url = requested_url.slice(7);
+        suggested_url_elm.innerHTML = suggested_url;
+        suggested_url_elm.href = location.protocol + "//" + location.hostname + "/" +  suggested_url;
+    }
+</script>
+</html>
