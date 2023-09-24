@@ -9,7 +9,7 @@
     <a id="suggested_url"></a>
 </body>
 <script>
-    const requested_url = "https://www.google.com"//window.location.pathname.slice(1);
+    const requested_url = window.location.pathname.slice(1);
     document.getElementById("requested_url").innerHTML = requested_url;
     const suggested_url_elm = document.getElementById("suggested_url")
     if (requested_url.slice(0,8) == "https://"){
